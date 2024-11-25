@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return redirect(route('login'));
+});
 
 Auth::routes();
 
