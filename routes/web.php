@@ -20,10 +20,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::prefix('admin')->middleware(['admin'])->group(function(){
+Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 });
 
-Route::prefix('student')->middleware(['student'])->group(function(){
+Route::prefix('student')->middleware(['auth','student'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Student\DashboardController::class, 'index'])->name('student.dashboard');
 });
