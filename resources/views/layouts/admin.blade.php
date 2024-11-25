@@ -53,7 +53,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('manage-user') }}">
+                <a class="nav-link" href="{{ url('admin/manage-user') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Manage User</span>
                 </a>
