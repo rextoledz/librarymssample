@@ -17,6 +17,10 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
+Route::get('/', function () {
+    return redirect('/login');
+});
+
 Route::prefix('admin')->middleware(['auth'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 });
