@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
-	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 	Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
 	Route::get('/book',[BookController::class, 'index'])->name('book');
 });
