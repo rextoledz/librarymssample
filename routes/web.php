@@ -17,10 +17,10 @@ use Illuminate\Http\Request;
 
 Auth::routes();
 
-Route::prefix('admin')->middleware(['auth'])->group(function(){
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 });
 
-Route::prefix('student')->middleware(['auth'])->group(function(){
+Route::prefix('student')->middleware(['auth','student'])->group(function(){
 	// Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 });
