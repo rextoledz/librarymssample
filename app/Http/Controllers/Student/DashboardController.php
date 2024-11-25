@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(){
-        return "hello";
+        return view('student.dashboard');
         $totalusers = User::count();
 
         return view('student.dashboard.index',[
