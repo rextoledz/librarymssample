@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Models\Role;
 
 class IfStudent
 {
@@ -15,6 +16,10 @@ class IfStudent
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+    	$role = Role::where('id', auth()->user()->role_id)->first();
+        if($role->id == 2){
+            return $next($request);
+        }
+        return redirect()->route('login');
     }
 }
