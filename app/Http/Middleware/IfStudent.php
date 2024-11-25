@@ -20,9 +20,9 @@ class IfStudent
     	if (Auth::user()) {
 	    	$role = Role::where('id', auth()->user()->role_id)->first();
 	        if($role->id == 2){
-	            return redirect($role->url);
+	            return $next($request);
 	        }
 	    }
-        return abort(403);
+        abort(403);
     }
 }
