@@ -25,5 +25,5 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function(){
 });
 
 Route::prefix('student')->middleware(['auth','student'])->group(function(){
-	Route::get('/dashboard', [App\Http\Controllers\Student\DashboardController::class, 'index'])->name('dashboard');
+	Route::get('/dashboard', [App\Http\Controllers\Student\DashboardController::class, 'index'])->name('student.dashboard');
 });
