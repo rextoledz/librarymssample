@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Book;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Admin\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,13 +14,19 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', function () {
+    return redirect(route('login'));
+});
 
 Auth::routes();
 
-Route::prefix('admin')->middleware(['auth'])->group(function(){
-	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('admin')->middleware(['admin'])->group(function(){
+	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
+	Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+    Route::post('/books', [BookController::class, 'store'])->name('books.store');
+    Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
 });
 
-Route::prefix('student')->middleware(['auth'])->group(function(){
-	// Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('student')->middleware(['student'])->group(function(){
+	Route::get('/dashboard', [App\Http\Controllers\Student\DashboardController::class, 'index'])->name('student.dashboard');
 });
