@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Book;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Admin\BookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,8 @@ Auth::routes();
 
 Route::prefix('admin')->middleware(['admin'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+	Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
+    Route::post('/books', [BookController::class, 'store'])->name('books.store');
 });
 
 Route::prefix('student')->middleware(['student'])->group(function(){
