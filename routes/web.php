@@ -21,7 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::prefix('admin')->middleware(['admin'])->group(function(){
-	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 	Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
     Route::post('/books', [BookController::class, 'store'])->name('books.store');
     Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
