@@ -28,7 +28,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
@@ -48,10 +48,17 @@
                     <span>Dashboard</span></a>
             </li>
 
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Utilities Collapse Menu -->
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ route('admin.addbooks')}}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Books</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('admin/manage-user') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -100,7 +107,7 @@
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-dark" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
