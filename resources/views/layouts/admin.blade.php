@@ -43,15 +43,20 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item @if($pagenumber == 1) active @endif">
                 <a class="nav-link" href="{{ route('admin.dashboard')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-             <li class="nav-item active">
+            <li class="nav-item @if($pagenumber == 2) active @endif">
                 <a class="nav-link" href="{{ route('admin.user')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Manage Users</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.role')}}">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Manage Roles</span></a>
             </li>
 
 

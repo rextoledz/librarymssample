@@ -25,6 +25,7 @@ Route::prefix('admin')->middleware(['admin'])->group(function(){
 	Route::get('/books/create', [BookController::class, 'create'])->name('books.create');
     Route::post('/books', [BookController::class, 'store'])->name('books.store');
     Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
+    Route::get('/roles', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('admin.role');
 });
 
 Route::prefix('student')->middleware(['student'])->group(function(){
