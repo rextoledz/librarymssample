@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Book;
 use Illuminate\Http\Request;
@@ -25,7 +24,8 @@ Route::get('/', function () {
 Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 	Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
-	Route::get('/book',[BookController::class, 'index'])->name('book');
+	Route::get('/manage-roles',[App\Http\Controllers\Admin\RoleController::class, 'index'])->name('admin.roles');
+	Route::get('/book',[App\Http\Controllers\Admin\BookController::class, 'index'])->name('admin.books');
 });
 
 Route::prefix('student')->middleware(['auth','student'])->group(function(){
