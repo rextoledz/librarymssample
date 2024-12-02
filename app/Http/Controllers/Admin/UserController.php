@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index(){
     	return view('admin.manage-users.index',[
-    		'pagenumber'=> 2
+    		'nav'=> 2
     	]);
     }
 }

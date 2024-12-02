@@ -14,7 +14,7 @@ class DashboardController extends Controller
 
     	return view('admin.dashboard.index',[
     		'totalusers' => $totalusers,
-    		'pagenumber' => 1
+    		'nav' => 1
     	]);
     }
 }
