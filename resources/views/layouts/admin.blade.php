@@ -42,7 +42,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item @if($nav==1) active @endif">
                 <a class="nav-link" href="{{ route('admin.dashboard')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -52,10 +52,17 @@
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url('admin/manage-user') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            <li class="nav-item @if($nav==2) active @endif">
+                <a class="nav-link" href="{{ route('admin.user') }}">
+                    <i class="fas fa-fw fa-users"></i>
                     <span>Manage User</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.roles') }}">
+                    <i class="fas fa-fw fa-tools"></i>
+                    <span>Manage Roles</span>
                 </a>
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
