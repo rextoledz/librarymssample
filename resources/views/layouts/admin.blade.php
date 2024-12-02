@@ -59,7 +59,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item @if($nav==3) active @endif">
                 <a class="nav-link" href="{{ route('admin.roles') }}">
                     <i class="fas fa-fw fa-tools"></i>
                     <span>Manage Roles</span>
