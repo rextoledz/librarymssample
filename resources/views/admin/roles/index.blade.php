@@ -11,6 +11,29 @@
 
 <!-- Content Row -->
 <div class="row">
-
+	<div class="col-sm-12">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>URL</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				@if(isset($roles))
+					@foreach($roles as $value)
+						<tr>
+							<td>{{ $value->id }}</td>
+							<td>{{ $value->name }}</td>
+							<td>{{ $value->url }}</td>
+							<td></td>
+						</tr>
+					@endforeach
+				@endif
+			</tbody>
+		</table>
+	</div>
 </div>
 @endsection
