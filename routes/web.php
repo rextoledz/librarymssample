@@ -26,6 +26,7 @@ Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
 	Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
 	Route::get('/manage-user', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.user');
 	Route::get('/addbooks', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.addbooks');
+	Route::get('/manage-roles', [App\Http\Controllers\Admin\RoleController::class, 'index'])->name('admin.role');
 	// Route::get('/books',[BookController::class, 'index'])->name('addbooks');
 });
 

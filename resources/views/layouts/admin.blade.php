@@ -60,9 +60,15 @@
                 </a>
             </li>
             <li class="nav-item  @if($nav == 2)active @endif">
-                <a class="nav-link" href="{{ url('admin/manage-user') }}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Manage User</span>
+                <a class="nav-link" href="{{ route('admin.user') }}">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Manage Users</span>
+                </a>
+            </li>
+            <li class="nav-item  @if($nav == 3)active @endif">
+                <a class="nav-link" href="{{ route('admin.role') }}">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Manage Roles</span>
                 </a>
             </li>
             <!-- Nav Item - Utilities Collapse Menu -->
