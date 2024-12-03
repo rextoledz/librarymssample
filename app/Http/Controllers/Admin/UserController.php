@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     public function index() {
-        return view('admin.dashboard.manage-user');
+        return view('admin.dashboard.manage-user',[
+        	'nav'=>2
+        ]);
        
     }
 }
