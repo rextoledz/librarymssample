@@ -5,7 +5,7 @@
 	<!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Manage Roles</h1>
-    <a href="" class="btn btn-primary">Add Role</a>
+    <a href="" class="btn btn-primary" href="{{ url('admin/roles/create') }}">Add Role</a>
 </div>
 
 <!-- Content Row -->

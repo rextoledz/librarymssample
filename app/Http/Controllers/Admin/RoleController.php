@@ -18,4 +18,22 @@ class RoleController extends Controller
     		'roles' => $roles
     	]);
     }
+
+    public function create()
+    {
+    	return view('admin.roles.create',[
+    		'nav' => 3
+    	]);
+    }
+
+    public function store(Request $request)
+    {
+    	$saveRole = new Role;
+    	$saveRole->name = $request->input('name');
+    	$saveRole->url = $request->input('url');
+
+    	if ($saveRole->save()) {
+    		return "Successfully saved";
+    	}
+    }
 }
