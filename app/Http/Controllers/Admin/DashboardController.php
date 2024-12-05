@@ -13,7 +13,8 @@ class DashboardController extends Controller
     	$totalusers = User::count();
 
     	return view('admin.dashboard.index',[
-    		'totalusers' => $totalusers
+    		'totalusers' => $totalusers,
+    		'nav' => 1
     	]);
     }
 }
